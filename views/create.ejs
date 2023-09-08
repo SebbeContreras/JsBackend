@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>jijutsu</title>
+</head>
+<link rel="stylesheet" href="/style.css">
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <a href="/index">Hem</a>
+                <a href="/members">Medlemmar</a>
+                <a href="/members/create">Skapa medlem</a>
+            </nav>
+        </header>
+        <main>
+            <form action="/members/create" method="post">
+                <label for="name">Fullname</label>
+                <input type="text" name="name" id="fullName">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <br>
+                <label for="phoneNumber">Phone number</label>
+                <input type="text" name="phoneNumber" id="phoneNumber">
+                <br>
+                <label for="memberSince">Member since</label>
+                <input type="date" name="memberSince" id="membersince">
+                <br>
+                <label for="belt">Color belt</label>
+                <input type="text" name="belt" id="belt">
+                <br>
+                <button>Save</button>
+            </form>
+        </main>
+        <footer>
+            <ul>
+                <li>Adress: Lurgatan 123, Stockholm</li>
+                <li>Telefon: 08 111 22 22</li>
+                <li>Email: Info@bjj.se</li>
+            </ul>
+            <p>copyright</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+:root {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 3rem;
+    padding: 2rem;
+    border-bottom: 1px solid gainsboro;
+}
+header nav > * {
+    padding-inline: .5rem;
+    text-transform: none;
+    text-decoration: none;
+    color: black;
+}
+main {
+    padding: 2rem;
+}
+footer{
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    height: 8rem;
+    width: 100vw;
+    border-top: 1px solid gainsboro;
+}
+footer ul {
+    list-style: none;
+}
+footer p {
+    text-align: center;
+}
+.hidden {
+    display:none;
+}

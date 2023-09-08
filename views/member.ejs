@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>jijutsu</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <a href="/index">Hem</a>
+                <a href="/members">Medlemmar</a>
+                <a href="/members/create">Skapa medlem</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Name: <%= name %></h1>
+            <p>Email: <%= email %></p>
+            <p>Phone number: <%= phoneNumber %></p>
+            <p>Member since: <%= memberSince %></p>
+            <p>Belt: <%= belt %></p>
+            <p><%= id %></p>
+
+            <button onclick="showForm()">Update info</button>
+            <form action="/member/d/<%= id %>" method="get">
+                <button>DELETE</button>
+            </form>
+
+            <form action="/member/<%= id %>" class="hidden" method="post">
+                <label for="name">Fullname</label>
+                <input type="text" name="name" id="fullName" value="<%= name %>">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= email %>">
+                <br>
+                <label for="phoneNumber">Phone number</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" value="<%= phoneNumber %>">
+                <br>
+                <label for="memberSince">Member since</label>
+                <input type="date" name="memberSince" id="membersince" value="<%= memberSince %>">
+                <br>
+                <label for="belt">Color belt</label>
+                <input type="text" name="belt" id="belt" value="<%= belt %>">
+                <br>
+                <button type="submit">Update</button>
+            </form>
+        </main>
+        <footer>
+            <ul>
+                <li>Adress: Lurgatan 123, Stockholm</li>
+                <li>Telefon: 08 111 22 22</li>
+                <li>Email: Info@bjj.se</li>
+            </ul>
+            <p>copyright</p>
+        </footer>
+    </div>
+    <script>
+        const showForm = () => {
+            document.querySelector(".hidden").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>

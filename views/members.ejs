@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>jijutsu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <a href="/index">Hem</a>
+                <a href="/members">Medlemmar</a>
+                <a href="/members/create">Skapa medlem</a>
+            </nav>
+        </header>
+        <main>
+            <% if (members.length === 0) { %>
+             <h3>Det finns inga medlemmar, Skapa på knappen nedan.</h3>
+             <% } else { %>
+            <form action="/sort">
+
+                <label for="filter">Filter</label>
+                <select name="filter" id="filter">
+                    <option value="Default">Default</option>
+                    <option value="A-Ö">A-Ö</option>
+                    <option value="Ö-A">Ö-A</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <section>
+                    <ul>
+                        <% members.forEach((member) => { %>
+                            <li>
+                                <a href="/member/<%= member._id %>">
+                                    Name: <%= member.name%> Belt: <%= member.belt%>
+                                </a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                        <% } %> 
+                    </section>
+            <a href="/members/create"><p>Create member</p></a>
+        </main>
+        <footer>
+            <ul>
+                <li>Adress: Lurgatan 123, Stockholm</li>
+                <li>Telefon: 08 111 22 22</li>
+                <li>Email: Info@bjj.se</li>
+            </ul>
+            <p>copyright</p>
+        </footer>
+    </div>
+</body>
+</html>
